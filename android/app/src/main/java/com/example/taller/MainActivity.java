@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity {
     
         EditText c, cl;
         String email = "", pass = "";
+        String mycorreo = "maicolcr97@hotmail.com";
+        String myclave = "12345";
         
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +30,17 @@ public class MainActivity extends AppCompatActivity {
 
         if(email.isEmpty() && pass.isEmpty()){
             Toast.makeText(this, "Los campos estan vacios", Toast.LENGTH_SHORT).show();
-        }else if(email != pass){
-            Toast.makeText(this, "Datos incorrectos", Toast.LENGTH_SHORT).show();
+        }else if(!email.isEmpty() && pass.isEmpty()){
+            Toast.makeText(this, "La contraseña está vacia", Toast.LENGTH_SHORT).show();
+        }else if(email.isEmpty() && !pass.isEmpty()){
+            Toast.makeText(this, "El correo está vacio", Toast.LENGTH_SHORT).show();
         }else{
-            Toast.makeText(this, "Login Ok", Toast.LENGTH_SHORT).show();
+            if(mycorreo.equals(email) && myclave.equals(pass)){
+                Toast.makeText(this, "Login Ok", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(this, "Correo o contraseña incorrectos", Toast.LENGTH_SHORT).show();
+            }
+
         }
     }
 
