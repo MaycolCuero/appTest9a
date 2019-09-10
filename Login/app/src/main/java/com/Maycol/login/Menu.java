@@ -22,12 +22,20 @@ public class Menu extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        return true;
+    }
+
+
+    // muestra el menu cuando se preciona
+    @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         menu.setHeaderTitle("My Colors");
         getMenuInflater().inflate(R.menu.colors, menu);
     }
 
+    // hace la opcion del menu
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
