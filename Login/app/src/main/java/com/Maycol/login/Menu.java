@@ -18,10 +18,10 @@ public class Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        TextView txt_info = findViewById(R.id.Id_text);
-        registerForContextMenu(txt_info);
+        //TextView txt_info = findViewById(R.id.Id_text);
+        //registerForContextMenu(txt_info);
     }
-
+/*
     @Override
     public boolean onCreateOptionsMenu(android.view.Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -82,5 +82,5 @@ public class Menu extends AppCompatActivity {
                 return super.onContextItemSelected(item);
         }
 
-    }
+    }*/
 }

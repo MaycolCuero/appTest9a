@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">Login</string>
+    <string name="Aboutof">Aboutof</string>
+    <string name="Alpha">Alpha</string>
+    <string name="Black">Black</string>
+    <string name="Blue">Blue</string>
+    <string name="Cyan">Cyan</string>
+    <string name="Green">Green</string>
+    <string name="Meganta">Meganta</string>
+    <string name="Opaque">Opaque</string>
+    <string name="Red">Red</string>
+    <string name="Semitransparent">Semi Transparent</string>
+    <string name="Transparent">Transparent</string>
+    <string name="White">White</string>
+    <string name="Yellow">Yellow</string>
+    <string name="ColorsMenu">ColorsMenu</string>
 </resources>
+

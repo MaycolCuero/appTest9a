@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Menu de colores</string>
+    <string name="Aboutof">Acerca de ...</string>
+    <string name="Alpha">Alpha</string>
+    <string name="Black">Negro</string>
+    <string name="Blue">Azul</string>
+    <string name="Cyan">Celeste</string>
+    <string name="Green">Verde</string>
+    <string name="Magenta">Magenta</string>
+    <string name="Opaque">Opaco</string>
+    <string name="Red">Rojo</string>
+    <string name="Semitransparent">Semitransparente</string>
+    <string name="Transparent">Transparente</string>
+    <string name="White">Blanco</string>
+    <string name="Yellow">Amarillo</string>
+</resources>

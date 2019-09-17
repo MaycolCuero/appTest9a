@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/iteTransparent"
+        android:title="@string/Transparent"/>
+    <item android:id="@+id/iteSemiTransparent"
+        android:title="@string/Semitransparent"/>
+    <item android:id="@+id/iteOpaque"
+        android:title="@string/Opaque"/>
+
+    <item android:id="@+id/iteOpaque"
+        android:title="@string/Transparent"/>
+    <item android:id="@+id/iteOpaque"
+        android:title="@string/Transparent"/>
+    <item android:id="@+id/iteOpaque"
+        android:title="@string/Transparent"/>
+    <item android:id="@+id/iteOpaque"
+        android:title="@string/Transparent"/>
+    <item android:id="@+id/iteOpaque"
+        android:title="@string/Transparent"/>
+    <item android:id="@+id/iteOpaque"
+        android:title="@string/Transparent"/>
+    <item android:id="@+id/iteOpaque"
+        android:title="@string/Transparent"/>
+    <item android:id="@+id/iteOpaque"
+        android:title="@string/Transparent"/>
+</menu>
