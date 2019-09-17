@@ -1,12 +1,15 @@
 package com.example.colors;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.SeekBar;
 
@@ -58,5 +61,82 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
 
+    }
+
+
+        // show context menu
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.colors, menu);
+    }
+
+    //Actions context
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+       // return super.onContextItemSelected(item);
+
+        switch (item.getItemId()){
+            case R.id.iteTransparent:
+                sbrAlpha.setProgress(0);
+                break;
+            case R.id.iteSemitransparent:
+                sbrAlpha.setProgress(128);
+                break;
+            case R.id.iteOpaque:
+                sbrAlpha.setProgress(255);
+                break;
+            case R.id.iteRed:
+                sbrRed.setProgress(255);
+                sbrGreen.setProgress(0);
+                sbrBlue.setProgress(0);
+                break;
+            case  R.id.iteCyan:
+                sbrRed.setProgress(0);
+                sbrGreen.setProgress(255);
+                sbrBlue.setProgress(255);
+                break;
+            case R.id.iteMagenta:
+                sbrRed.setProgress(255);
+                sbrGreen.setProgress(0);
+                sbrBlue.setProgress(255);
+                break;
+            case R.id.iteYellow:
+                sbrRed.setProgress(255);
+                sbrGreen.setProgress(255);
+                sbrBlue.setProgress(0);
+                break;
+            case R.id.iteBlack:
+                sbrRed.setProgress(0);
+                sbrGreen.setProgress(0);
+                sbrBlue.setProgress(0);
+                break;
+            case  R.id.iteWhite:
+                sbrRed.setProgress(0);
+                sbrGreen.setProgress(255);
+                sbrBlue.setProgress(255);
+                break;
+            case R.id.iteGreen:
+                sbrRed.setProgress(0);
+                sbrGreen.setProgress(255);
+                sbrBlue.setProgress(0);
+                break;
+            case R.id.iteBlue:
+                sbrRed.setProgress(0);
+                sbrGreen.setProgress(0);
+                sbrBlue.setProgress(255);
+                break;
+
+            case R.id.iteAboutof:
+                Intent intent = new Intent(this, Main2Activity.class);
+                break;
+            default:
+                return super.onContextItemSelected(item);
+        }
+
+        return false;
     }
 }
