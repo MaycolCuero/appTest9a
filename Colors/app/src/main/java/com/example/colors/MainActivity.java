@@ -3,42 +3,44 @@ package com.example.colors;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.view.ContextMenu;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.SeekBar;
 
+
 public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
+
     private SeekBar sbrRed = null;
     private SeekBar sbrGreen = null;
     private SeekBar sbrBlue = null;
     private SeekBar sbrAlpha = null;
-    private View viewColors = null;
+    private View vieColors = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //obtenemos los datos
         sbrRed = findViewById(R.id.sbrRed);
         sbrGreen = findViewById(R.id.sbrGreen);
         sbrBlue = findViewById(R.id.sbrBlue);
         sbrAlpha = findViewById(R.id.sbrAlpha);
+        vieColors = findViewById(R.id.vieColors);
 
         sbrRed.setOnSeekBarChangeListener(this);
         sbrGreen.setOnSeekBarChangeListener(this);
         sbrBlue.setOnSeekBarChangeListener(this);
         sbrAlpha.setOnSeekBarChangeListener(this);
 
-        // muestra o aplica el menu contextual cuando se mantiene precionado viewColors, permite
-        // aplicar un menu contextual a cualquier view en este caso a viewcolors
-        registerForContextMenu(viewColors);
+        // Permite abrir el menu contextual
+        registerForContextMenu(vieColors);
+
     }
 
     @Override
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         int a = sbrAlpha.getProgress();
 
         int color = Color.argb(a,r,g,bl);
-        viewColors.setBackgroundColor(color);
+        vieColors.setBackgroundColor(color);
 
     }
 
@@ -63,8 +65,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
     }
 
-
-        // show context menu
+    //Mostrar el menu contextual
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
@@ -73,70 +74,85 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         inflater.inflate(R.menu.colors, menu);
     }
 
-    //Actions context
+    //Muestra las acciones del menu contextual
+
 
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
-       // return super.onContextItemSelected(item);
+
 
         switch (item.getItemId()){
             case R.id.iteTransparent:
                 sbrAlpha.setProgress(0);
-                break;
+                return true;
+
             case R.id.iteSemitransparent:
                 sbrAlpha.setProgress(128);
-                break;
+                return true;
+
             case R.id.iteOpaque:
                 sbrAlpha.setProgress(255);
-                break;
+                return true;
+
             case R.id.iteRed:
                 sbrRed.setProgress(255);
                 sbrGreen.setProgress(0);
                 sbrBlue.setProgress(0);
-                break;
-            case  R.id.iteCyan:
+                return true;
+
+            case R.id.iteCyan:
                 sbrRed.setProgress(0);
                 sbrGreen.setProgress(255);
                 sbrBlue.setProgress(255);
-                break;
+                return true;
+
             case R.id.iteMagenta:
                 sbrRed.setProgress(255);
                 sbrGreen.setProgress(0);
                 sbrBlue.setProgress(255);
-                break;
+                return true;
+
             case R.id.iteYellow:
                 sbrRed.setProgress(255);
                 sbrGreen.setProgress(255);
                 sbrBlue.setProgress(0);
-                break;
+                return true;
+
             case R.id.iteBlack:
                 sbrRed.setProgress(0);
                 sbrGreen.setProgress(0);
                 sbrBlue.setProgress(0);
-                break;
-            case  R.id.iteWhite:
-                sbrRed.setProgress(0);
+                return true;
+
+            case R.id.iteWhite:
+                sbrRed.setProgress(255);
                 sbrGreen.setProgress(255);
                 sbrBlue.setProgress(255);
-                break;
+                return true;
+
             case R.id.iteGreen:
                 sbrRed.setProgress(0);
                 sbrGreen.setProgress(255);
                 sbrBlue.setProgress(0);
-                break;
+                return true;
+
             case R.id.iteBlue:
                 sbrRed.setProgress(0);
                 sbrGreen.setProgress(0);
                 sbrBlue.setProgress(255);
-                break;
+                return true;
 
             case R.id.iteAboutof:
-                Intent intent = new Intent(this, Main2Activity.class);
-                break;
+                Intent intent = new Intent(this, AboutOf.class);
+                startActivity(intent);
+                return true;
+
             default:
-                return super.onContextItemSelected(item);
+                super.onContextItemSelected(item);
+                return true;
         }
 
-        return false;
+
+
     }
 }
