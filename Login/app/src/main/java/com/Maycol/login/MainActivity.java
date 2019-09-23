@@ -2,7 +2,10 @@ package com.Maycol.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -22,6 +25,15 @@ public class MainActivity extends AppCompatActivity {
         if (email.isEmpty() && pass.isEmpty()) {
 
         }
+
+        Button btn = (Button) findViewById(R.id.botonact1);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (v.getContext(), AcercaDe.class);
+                startActivityForResult(intent, 0);
+            }
+        });
 
     }
 }
