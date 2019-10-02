@@ -13,10 +13,10 @@ public class connectionDB extends  SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase market) {
         //Create Tables
-        market.execSQL("create table users(id primary key not null," +
+        market.execSQL("create table users(id integer primary key autoincrement," +
                 "firstname text not null," +
-                "lastname text not null," +
-                "email text not null," +
+                "lastname text," +
+                "email text," +
                 "password text)");
     }
 

@@ -23,7 +23,7 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         fname = findViewById(R.id.txtIdFirstName);
-
+    /*
         Button btn2 = (Button) findViewById(R.id.btnRegister);
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,7 +32,7 @@ public class SignUp extends AppCompatActivity {
                 startActivityForResult(intent2, 0);
             }
         });
-
+*/
 
 
     }
@@ -53,7 +53,7 @@ public class SignUp extends AppCompatActivity {
         DATA.put("firstname",FName);
         DATA.put("lastname",LName);
         DATA.put("email",Email);
-        DATA.put("pass", Pass);
+        DATA.put("password", Pass);
 
         //Save values into DB
         market.insert("users", null,DATA);
