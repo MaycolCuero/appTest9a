@@ -13,26 +13,30 @@ import com.example.conexionbd.clases.connectionBD;
 
 public class Singup extends AppCompatActivity {
 
-    EditText fname;
+    EditText fname, lname, email, passwd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_singup);
         fname = findViewById(R.id.idFname);
+        lname = findViewById(R.id.idLname);
+        email = findViewById(R.id.idEmail);
+        passwd = findViewById(R.id.idPassword);
     }
 
     public void Signup(View view){
         //crear el asistente de conexion
-        connectionBD manager = new connectionBD( this, "Data", null, 1);
+        connectionBD manager = new connectionBD( this, "market", null, 1);
         //leer y escribir en la BD
         SQLiteDatabase market = manager.getWritableDatabase();
         //Obtener valores
         String Fname = fname.getText().toString();
-        String Lname = "";
-        String Email = "";
-        String Passwd = "";
+        String Lname = lname.getText().toString();
+        String Email = email.getText().toString();
+        String Passwd = passwd.getText().toString();
 
-        if (!Fname.isEmpty()){
+        if (!Fname.isEmpty() && !Lname.isEmpty() && !Email.isEmpty()
+                && !Passwd.isEmpty()){
             ContentValues DATA = new ContentValues();
 
             DATA.put("firstname", Fname);
@@ -45,7 +49,7 @@ public class Singup extends AppCompatActivity {
             Toast.makeText(this, "El usuario fue creado", Toast.LENGTH_SHORT).show();
             market.close();
         }else{
-            Toast.makeText(this, "Debe ingresar un usuario", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "There are empty fields ", Toast.LENGTH_SHORT).show();
         }
 
     }
