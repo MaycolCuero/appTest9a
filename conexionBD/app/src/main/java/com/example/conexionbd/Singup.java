@@ -3,6 +3,7 @@ package com.example.conexionbd;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -39,21 +40,32 @@ public class Singup extends AppCompatActivity {
                 && !Passwd.isEmpty()){
 
             // validation: Don`t repeat email if exists
-            ContentValues DATA = new ContentValues();
 
-            DATA.put("firstname", Fname);
-            DATA.put("lastname", Lname);
-            DATA.put("email", Email);
-            DATA.put("password", Passwd);
-            fname.setText("");
-            passwd.setText("");
-            email.setText("");
-            lname.setText("");
+            Cursor row = market.rawQuery
+                    ("SELECT email FROM users " +
+                            "WHERE email = '" +  Email + "'", null);
 
-            //Guardar valores en BD
-            market.insert("users", null, DATA);
-            Toast.makeText(this, "El usuario fue creado", Toast.LENGTH_SHORT).show();
-            market.close();
+            //if( row.moveToFirst()){ // se ubica en  la primera posision es decir debuelve un true si hay algun elemento
+            if(row.getCount() > 0){
+                Toast.makeText(this, "El usuario ya existe", Toast.LENGTH_SHORT).show();
+            }else{
+                ContentValues DATA = new ContentValues();
+
+                DATA.put("firstname", Fname);
+                DATA.put("lastname", Lname);
+                DATA.put("email", Email);
+                DATA.put("password", Passwd);
+                fname.setText("");
+                passwd.setText("");
+                email.setText("");
+                lname.setText("");
+
+                //Guardar valores en BD
+                market.insert("users", null, DATA);
+                Toast.makeText(this, "El usuario fue creado", Toast.LENGTH_SHORT).show();
+                market.close();
+            }
+
         }else{
             Toast.makeText(this, "There are empty fields ", Toast.LENGTH_SHORT).show();
             fname.setError("field can`t be emty");
