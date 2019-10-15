@@ -37,12 +37,18 @@ public class Singup extends AppCompatActivity {
 
         if (!Fname.isEmpty() && !Lname.isEmpty() && !Email.isEmpty()
                 && !Passwd.isEmpty()){
+
+            // validation: Don`t repeat email if exists
             ContentValues DATA = new ContentValues();
 
             DATA.put("firstname", Fname);
             DATA.put("lastname", Lname);
             DATA.put("email", Email);
             DATA.put("password", Passwd);
+            fname.setText("");
+            passwd.setText("");
+            email.setText("");
+            lname.setText("");
 
             //Guardar valores en BD
             market.insert("users", null, DATA);
@@ -50,6 +56,10 @@ public class Singup extends AppCompatActivity {
             market.close();
         }else{
             Toast.makeText(this, "There are empty fields ", Toast.LENGTH_SHORT).show();
+            fname.setError("field can`t be emty");
+            passwd.setError("field can`t be emty");
+            email.setError("field can`t be emty");
+            lname.setError("field can`t be emty");
         }
 
     }
