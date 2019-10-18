@@ -12,17 +12,15 @@ import com.example.conexionbd.clases.connectionBD;
 
 import java.util.ArrayList;
 
-public class list_users extends AppCompatActivity {
+public class ListUsers extends AppCompatActivity {
 
-    // call DataBase class connection
-
+    //Llamar a la BD
     connectionBD market;
-    // Create ListView variable
-    ListView userList;
-    // Create an ArrayList variable
+    // Crear la variable listview
+    ListView UserList;
+    //Crear un arreglo
     ArrayList<String> listItem;
-    // Create Array adapter variable
-
+    // Crear un adaptador
     ArrayAdapter adapter;
 
     @Override
@@ -30,33 +28,33 @@ public class list_users extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_users);
 
-        //Instant DB Connection
+        //Conexion bd
         market = new connectionBD(this, "market", null, 1);
-
-        // Create empty array
-
+        // Arreglo lista
         listItem = new ArrayList<>();
-        // Call ListView id
-        userList = findViewById(R.id.idUserList);
+        // Traer el id del listview
+        UserList = findViewById(R.id.IdListUsers);
 
-        // Call viewDatra method
-
+        //Crear metodo para ver los datos
         viewData();
+
+
     }
 
     private void viewData() {
         Cursor cursor = market.SelectUserData();
-        if (cursor.getCount() == 0){
-            Toast.makeText(this, "there aren`t users", Toast.LENGTH_SHORT).show();
-        }else{
-            while (cursor.moveToNext()){
-                listItem.add(cursor.getString(1)); // obtenemos el nombre
-                listItem.add(cursor.getString(2)); // obtenemos el apellido
-            }
 
+        if(cursor.getCount() == 0){
+            Toast.makeText(this, "No hay usuarios creados", Toast.LENGTH_SHORT).show();
+        } else {
+            while (cursor.moveToNext()){
+                listItem.add(cursor.getString(1));
+                listItem.add(cursor.getString(2));
+            }
             adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1, listItem);
 
-            userList.setAdapter(adapter);
+            UserList.setAdapter(adapter);
         }
+
     }
 }

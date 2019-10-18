@@ -11,9 +11,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">ç
-
-        <activity android:name=".list_users">
+        android:theme="@style/AppTheme">
+        <activity android:name=".ListUsers" android:label="@string/UsersList">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,8 +20,7 @@
             </intent-filter>
         </activity>
 
-
-        <activity android:name=".Login" android:label="@string/login" android:theme="@style/AppTheme_NoActionBar">
+        <activity android:name=".Login" android:label="@string/Login" android:theme="@style/AppTheme_NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,18 +28,16 @@
             </intent-filter>
         </activity>
 
-
-        <activity android:name=".Singup" />
-
-
-
-        <activity android:name=".MainActivity">
+        <activity android:name=".Singup" android:label="@string/SingUp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".MainActivity"></activity>
+
     </application>
 
 </manifest>

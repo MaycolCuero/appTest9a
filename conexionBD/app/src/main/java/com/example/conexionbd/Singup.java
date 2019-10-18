@@ -14,15 +14,15 @@ import com.example.conexionbd.clases.connectionBD;
 
 public class Singup extends AppCompatActivity {
 
-    EditText fname, lname, email, passwd;
+    EditText fname, lname, email, pwd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_singup);
-        fname = findViewById(R.id.idFname);
-        lname = findViewById(R.id.idLname);
-        email = findViewById(R.id.idEmail);
-        passwd = findViewById(R.id.idPassword);
+        fname = findViewById(R.id.IdFname);
+        lname = findViewById(R.id.IdLname);
+        email = findViewById(R.id.IdEmail);
+        pwd= findViewById(R.id.IdPass);
     }
 
     public void Signup(View view){
@@ -34,44 +34,57 @@ public class Singup extends AppCompatActivity {
         String Fname = fname.getText().toString();
         String Lname = lname.getText().toString();
         String Email = email.getText().toString();
-        String Passwd = passwd.getText().toString();
+        String Passwd = pwd.getText().toString();
 
-        if (!Fname.isEmpty() && !Lname.isEmpty() && !Email.isEmpty()
-                && !Passwd.isEmpty()){
+        if (!Fname.isEmpty() && !Lname.isEmpty() && !Email.isEmpty() && !Passwd.isEmpty()){
+            //Validacion para que el correo no se repita
 
-            // validation: Don`t repeat email if exists
+            Cursor row = market.rawQuery("SELECT email FROM users WHERE email = '" + Email + "'",null);
 
-            Cursor row = market.rawQuery
-                    ("SELECT email FROM users " +
-                            "WHERE email = '" +  Email + "'", null);
-
-            //if( row.moveToFirst()){ // se ubica en  la primera posision es decir debuelve un true si hay algun elemento
-            if(row.getCount() > 0){
+            //if (row.moveToFirst())
+            if (row.getCount() > 0){
+                email.setError("el usuario ya existe");
                 Toast.makeText(this, "El usuario ya existe", Toast.LENGTH_SHORT).show();
-            }else{
+            } else {
                 ContentValues DATA = new ContentValues();
 
                 DATA.put("firstname", Fname);
                 DATA.put("lastname", Lname);
                 DATA.put("email", Email);
                 DATA.put("password", Passwd);
-                fname.setText("");
-                passwd.setText("");
-                email.setText("");
-                lname.setText("");
 
                 //Guardar valores en BD
                 market.insert("users", null, DATA);
-                Toast.makeText(this, "El usuario fue creado", Toast.LENGTH_SHORT).show();
                 market.close();
+
+                fname.setText("");
+                lname.setText("");
+                email.setText("");
+                pwd.setText("");
+
+                Toast.makeText(this, "El usuario fue creado", Toast.LENGTH_SHORT).show();
+            }
+        }else{
+            if (!Fname.isEmpty()){
+                lname.setError("El campo no puede ser vacio");
+                email.setError("El campo no puede ser vacio");
+                pwd.setError("El campo no puede ser vacio");
+            } else if (Lname.isEmpty()){
+                fname.setError("El campo no puede ser vacio");
+                email.setError("El campo no puede ser vacio");
+                pwd.setError("El campo no puede ser vacio");
+            } else if(Email.isEmpty()){
+                fname.setError("El campo no puede ser vacio");
+                lname.setError("El campo no puede ser vacio");
+                pwd.setError("El campo no puede ser vacio");
+            } else if (Passwd.isEmpty()){
+                fname.setError("El campo no puede ser vacio");
+                lname.setError("El campo no puede ser vacio");
+                email.setError("El campo no puede ser vacio");
+            } else {
+                Toast.makeText(this, "Los campos estan vacios", Toast.LENGTH_SHORT).show();
             }
 
-        }else{
-            Toast.makeText(this, "There are empty fields ", Toast.LENGTH_SHORT).show();
-            fname.setError("field can`t be emty");
-            passwd.setError("field can`t be emty");
-            email.setError("field can`t be emty");
-            lname.setError("field can`t be emty");
         }
 
     }
