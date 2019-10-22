@@ -55,6 +55,7 @@ public class list_users extends AppCompatActivity {
             }
 
             adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1, listItem);
+//            adapter = new ArrayAdapter(this,android.R.layout.simple_dropdown_item_1line, listItem);
 
             userList.setAdapter(adapter);
         }
