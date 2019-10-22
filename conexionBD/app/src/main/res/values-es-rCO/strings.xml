@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tienda</string>
+    <string name="Login">Login</string>
+    <string name="SingUp">Registro</string>
+    <string name="UsersList">Lista de usuarios</string>
+</resources>
