@@ -3,6 +3,7 @@ package com.crubMySQL9.crubmysql9;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -29,8 +30,11 @@ public class MainActivity extends AppCompatActivity {
         email = findViewById(R.id.iduseremail);
         btn_Reguser = findViewById(R.id.idRegister);
 
-        btn_Reguser.setOnClickListener({
-                Register("http://localhost/APIRest/reg_user.php");
+        btn_Reguser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Register("http://172.21.0.53/APIRest/reg_user.php");
+            }
         });
 
     }
