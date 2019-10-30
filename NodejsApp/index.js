@@ -32,3 +32,27 @@ connectionDB.connect((err)=>{
 
 //8.  RUN Server
 app.listen(3000, ()=>console.log('Server is already running at port:3000'));
+
+//9. GET all market data base users
+app.get('/list_users',(req,res)=>{
+    connectionDB.query('SELECT * FROM users',(err, rows, fields)=>{
+        if(!err){
+            console.log(rows);
+            res.send(rows);
+        }           
+        else
+            console.log(err);
+    })
+});
+
+//9. GET/look for an user
+app.get('/list_users/:id',(req,res)=>{
+    connectionDB.query('SELECT * FROM users WHERE id=?', [req.params.id],(err, rows, fields)=>{
+        if(!err){
+            console.log(rows);
+            res.send(rows);
+        }           
+        else
+            console.log(err);
+    })
+});
