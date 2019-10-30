@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         btn_Reguser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Register("http://172.21.0.53/APIRest/reg_user.php");
+                Register("http://192.168.56.1/APIRest/reg_user.php");
             }
         });
 
