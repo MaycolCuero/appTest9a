@@ -45,7 +45,7 @@ app.get('/list_users',(req,res)=>{
     })
 });
 
-//9. GET/look for an user
+//10. GET/look for an user
 app.get('/list_users/:id',(req,res)=>{
     connectionDB.query('SELECT * FROM users WHERE id=?', [req.params.id],(err, rows, fields)=>{
         if(!err){
@@ -56,3 +56,7 @@ app.get('/list_users/:id',(req,res)=>{
             console.log(err);
     })
 });
+
+//11. INSERT/UPDATE
+
+//12. DELETE
