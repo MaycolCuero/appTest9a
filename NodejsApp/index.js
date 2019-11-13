@@ -12,6 +12,10 @@ var app = express();
 
 //5. Enable JSON request 
 app.use(bodyparser.json());
+// this allow register data whit method post 
+app.use(bodyparser.urlencoded({
+    extended:true
+}));
 
 //6. Create mysql data base connection 
 var connectionDB = mysql.createConnection({
@@ -49,7 +53,7 @@ app.get('/list_users',(req,res)=>{
 app.post('/insert_users',(req,res)=>{
     connectionDB.query('INSERT INTO users (firstname, lastname, email, phone) VALUES (?,?,?,?)', [req.body.firstname, req.body.lastname, req.body.email,req.body.phone],(err, rows, fields)=>{
         if(!err){
-            console.log("User has been register");
+            console.log("User has been inserted");
             res.send("user has been register");
         }           
         else
