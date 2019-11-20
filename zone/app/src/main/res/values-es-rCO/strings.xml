@@ -4,7 +4,12 @@
     <string name="weather">CLIMA</string>
     <string name="search">BUSCAR CLIMA</string>
     <string name="current">ACTUAL</string>
-    <string name="maop">IR AL MAPA</string>
     <string name="max">MAXIMO</string>
     <string name="min">MINIMO</string>
+    <string name="maps">IR AL MAPA</string>
+    <string name="max_weather">TEMPERATURA MAXIMA</string>
+    <string name="min_weather">TEMPERATURA MINIMA</string>
+    <string name="current_weather">TEMPERATURA ACTUAL</string>
+    <string name="weather_ph">TEMPERATURA</string>
+    <string name="search_ph">Ex. Pasto,CO</string>
 </resources>

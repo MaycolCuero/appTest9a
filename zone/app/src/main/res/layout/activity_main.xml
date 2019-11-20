@@ -51,14 +51,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Current:" />
+                android:text="@string/current" />
 
             <TextView
                 android:id="@+id/lblcurrent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Current weather" />
+                android:hint="Current weather"
+                android:text="@string/current_weather" />
         </LinearLayout>
 
         <LinearLayout
@@ -78,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Min weather" />
+                android:text="@string/min_weather" />
         </LinearLayout>
 
         <LinearLayout
@@ -98,7 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Max weather" />
+                android:text="@string/max_weather" />
         </LinearLayout>
 
         <LinearLayout
@@ -118,7 +119,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Weather" />
+                android:text="@string/weather_ph" />
         </LinearLayout>
 
         <LinearLayout
@@ -131,7 +132,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/maop" />
+                android:text="@string/maps" />
         </LinearLayout>
 
         <LinearLayout

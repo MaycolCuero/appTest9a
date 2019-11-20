@@ -10,4 +10,5 @@
     <string name="min_weather">Min weather</string>
     <string name="current_weather">Current Weather</string>
     <string name="weather_ph">Weather</string>
+    <string name="search_ph">Ex. Pasto,CO</string>
 </resources>
