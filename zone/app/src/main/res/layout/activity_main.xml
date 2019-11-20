@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="SEARCH WEATHER" />
+                android:text="@string/search" />
         </LinearLayout>
 
         <LinearLayout
@@ -71,7 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Min:" />
+                android:text="@string/min" />
 
             <TextView
                 android:id="@+id/lblmin"
@@ -91,7 +91,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Max:" />
+                android:text="@string/max" />
 
             <TextView
                 android:id="@+id/lblmax"
@@ -108,10 +108,10 @@
 
             <TextView
                 android:id="@+id/textView7"
-                android:layout_width="wrap_content"
+                android:layout_width="3dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Weather:" />
+                android:text="@string/weather" />
 
             <TextView
                 android:id="@+id/textViewWeather"
@@ -131,7 +131,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="GO TO MAPS" />
+                android:text="@string/maop" />
         </LinearLayout>
 
         <LinearLayout

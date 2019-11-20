@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DemoWeather</string>
+    <string name="weather">CLIMA</string>
+    <string name="search">BUSCAR CLIMA</string>
+    <string name="current">ACTUAL</string>
+    <string name="maop">IR AL MAPA</string>
+    <string name="max">MAXIMO</string>
+    <string name="min">MINIMO</string>
+</resources>
