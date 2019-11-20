@@ -4,8 +4,9 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="MinColo">#EEFA00</color>
-    <color name="MaxColor">#D81B60</color>
-    <color name="WeatherColor">#D81B60</color>
+    <color name="MinColor">#56B9EE</color>
+    <color name="MaxColor">#F5BA2B</color>
+    <color name="WeatherColor">#B7F57070</color>
+    <color name="CurrentColor">#7BEC7F</color>
     <color name="BackGroundColor">#B9F1EC</color>
 </resources>
