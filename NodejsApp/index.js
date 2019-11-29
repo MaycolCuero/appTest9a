@@ -84,3 +84,16 @@ app.delete('/delete_users/:id',(req,res)=>{
             console.log(err);
     })
 });
+
+
+//13. GET all messages
+app.get('/list_message',(req,res)=>{
+    connectionDB.query('SELECT * FROM message',(err, rows, fields)=>{
+        if(!err){
+            console.log(rows);
+            res.send(rows);
+        }           
+        else
+            console.log(err);
+    })
+});

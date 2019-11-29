@@ -1,0 +1,83 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.sqlitecrud2019"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="15"
+8-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml
+10
+11    <application
+11-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:5:5-37:19
+12        android:allowBackup="true"
+12-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:6:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.0.1] C:\Users\Maycol\.gradle\caches\transforms-2\files-2.1\46da25c3e2ae6308b2227b660caa604d\core-1.0.1\AndroidManifest.xml:22:18-86
+14        android:debuggable="true"
+15        android:icon="@mipmap/ic_launcher"
+15-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:7:9-43
+16        android:label="@string/app_name"
+16-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:8:9-41
+17        android:roundIcon="@mipmap/ic_launcher_round"
+17-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:9:9-54
+18        android:supportsRtl="true"
+18-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:10:9-35
+19        android:testOnly="true"
+20        android:theme="@style/AppTheme" >
+20-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:11:9-40
+21        <activity android:name="com.example.sqlitecrud2019.Update" />
+21-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:12:9-53
+21-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:12:19-41
+22        <activity
+22-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:13:9-22:20
+23            android:name="com.example.sqlitecrud2019.UserList"
+23-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:14:13-37
+24            android:label="@string/user_list"
+24-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:15:13-46
+25            android:theme="@style/AppTheme" >
+25-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:16:13-44
+26            <intent-filter>
+26-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:17:13-21:29
+27                <action android:name="android.intent.action.MAIN" />
+27-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:18:17-69
+27-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:18:25-66
+28
+29                <category android:name="android.intent.category.LAUNCHER" />
+29-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:20:17-77
+29-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:20:27-74
+30            </intent-filter>
+31        </activity>
+32        <activity
+32-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:23:9-31:20
+33            android:name="com.example.sqlitecrud2019.SignIn"
+33-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:24:13-35
+34            android:theme="@style/NoActionBar" >
+34-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:25:13-47
+35            <intent-filter>
+35-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:17:13-21:29
+36                <action android:name="android.intent.action.MAIN" />
+36-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:18:17-69
+36-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:18:25-66
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:20:17-77
+38-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:20:27-74
+39            </intent-filter>
+40        </activity>
+41        <activity
+41-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:32:9-35:50
+42            android:name="com.example.sqlitecrud2019.SignUp"
+42-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:33:13-35
+43            android:label="Sign Up"
+43-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:34:13-36
+44            android:theme="@style/NoActionBar" />
+44-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:35:13-47
+45        <activity android:name="com.example.sqlitecrud2019.MainActivity" />
+45-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:36:9-50
+45-->D:\PYTHON\appTest9a\taller\SQLiteCRUD2019\app\src\main\AndroidManifest.xml:36:19-47
+46    </application>
+47
+48</manifest>
