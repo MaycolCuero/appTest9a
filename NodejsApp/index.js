@@ -49,6 +49,18 @@ app.get('/list_users',(req,res)=>{
     })
 });
 
+//list user whit id
+app.get('/list_users/:id',(req,res)=>{
+    connectionDB.query('SELECT * FROM users WHERE id=?',[req.params.id],(err, rows, fields)=>{
+        if(!err){
+            console.log(rows);
+            res.send(rows);
+        }           
+        else
+            console.log(err);
+    })
+});
+
 //10. GET/look for an user
 app.post('/insert_users',(req,res)=>{
     connectionDB.query('INSERT INTO users (firstname, lastname, email, phone, password) VALUES (?,?,?,?,?)', [req.body.firstname, req.body.lastname, req.body.email,req.body.phone, req.body.password],(err, rows, fields)=>{
@@ -61,17 +73,7 @@ app.post('/insert_users',(req,res)=>{
     })
 });
 
-//11. INSERT/UPDATE
-app.delete('/delete_users/:id',(req,res)=>{
-    connectionDB.query('DELETE FROM users WHERE id=?', [req.params.id],(err, rows, fields)=>{
-        if(!err){
-            console.log("User has been deleted");
-            res.send("User has been deleted");
-        }           
-        else
-            console.log(err);
-    })
-});
+
 
 //12. DELETE
 app.delete('/delete_users/:id',(req,res)=>{
@@ -97,3 +99,4 @@ app.get('/list_message',(req,res)=>{
             console.log(err);
     })
 });
+
