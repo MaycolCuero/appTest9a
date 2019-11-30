@@ -112,3 +112,15 @@ app.get('/list_message',(req,res)=>{
     })
 });
 
+//lista de mensajes filtrados por chat
+app.get('/list_chat_messages/:id',(req,res)=>{
+    connectionDB.query('SELECT m.value, m.id_user_send, id_chat FROM message as m inner join chat as c where c.id=?',[req.params.id],(err, rows, fields)=>{
+        if(!err){
+            console.log(rows);
+            res.send(rows);
+        }           
+        else
+            console.log(err);
+    })
+});
+
