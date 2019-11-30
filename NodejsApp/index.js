@@ -39,18 +39,20 @@ app.listen(3000, ()=>console.log('Server is already running at port:3000'));
 
 //9. GET all market data base users
 app.get('/list_users',(req,res)=>{
-    connectionDB.query('SELECT * FROM users',(err, rows, fields)=>{
-        if(!err){
-            console.log(rows);
-            res.send(rows);
-        }           
-        else
-            console.log(err);
-    })
+     
+        connectionDB.query('SELECT * FROM users',(err, rows, fields)=>{
+            if(!err){
+                console.log(rows);
+                res.send(rows);
+            }           
+            else
+                console.log(err);
+        })
+    
 });
 
 //list user whit id
-app.get('/list_users/:id',(req,res)=>{
+app.get('/list_users_id/:id',(req,res)=>{
     connectionDB.query('SELECT * FROM users WHERE id=?',[req.params.id],(err, rows, fields)=>{
         if(!err){
             console.log(rows);
@@ -149,6 +151,23 @@ app.post('/insert_chat',(req,res)=>{
             datos = {'id_chat':rows.insertId}
             console.log(datos)
             //res.send("Message has been register");
+        }           
+        else
+            console.log(err);
+    })
+});
+
+// login 
+app.post('/login',(req,res)=>{
+  
+    connectionDB.query('SELECT * FROM users WHERE email=? AND password=?', [req.body.email,req.body.password],(err, rows, fields)=>{
+        if(!err){
+            console.log("¡¡¡ login !!");
+            console.log(rows); //obtengo el id del mensaje que se creo
+            //res.send(""+rows.insertId); //envio el id que se acabo de crear
+           // datos = {'id_chat':rows.insertId}
+           res.send(rows)
+           
         }           
         else
             console.log(err);
