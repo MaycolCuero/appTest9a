@@ -137,3 +137,20 @@ app.post('/insert_message',(req,res)=>{
             console.log(err);
     })
 });
+
+//insert new chat 
+app.post('/insert_chat',(req,res)=>{
+    var datos = {};
+    connectionDB.query('INSERT INTO chat (date) VALUES (?)', [req.body.date],(err, rows, fields)=>{
+        if(!err){
+            console.log("Chat has been inserted");
+            console.log(rows.insertId); //obtengo el id del mensaje que se creo
+            res.send(""+rows.insertId); //envio el id que se acabo de crear
+            datos = {'id_chat':rows.insertId}
+            console.log(datos)
+            //res.send("Message has been register");
+        }           
+        else
+            console.log(err);
+    })
+});
