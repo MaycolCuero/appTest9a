@@ -22,7 +22,7 @@ var connectionDB = mysql.createConnection({
     host: 'localhost',
     user:'root',
     password:'',
-    database:'market'
+    database:'messages'
 });
 
 //7. Valdiate mysql data base connection
@@ -51,7 +51,7 @@ app.get('/list_users',(req,res)=>{
 
 //10. GET/look for an user
 app.post('/insert_users',(req,res)=>{
-    connectionDB.query('INSERT INTO users (firstname, lastname, email, phone) VALUES (?,?,?,?)', [req.body.firstname, req.body.lastname, req.body.email,req.body.phone],(err, rows, fields)=>{
+    connectionDB.query('INSERT INTO users (firstname, lastname, email, phone, password) VALUES (?,?,?,?,?)', [req.body.firstname, req.body.lastname, req.body.email,req.body.phone, req.body.password],(err, rows, fields)=>{
         if(!err){
             console.log("User has been inserted");
             res.send("user has been register");
