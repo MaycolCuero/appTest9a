@@ -73,6 +73,18 @@ app.post('/insert_users',(req,res)=>{
     })
 });
 
+//10. GET/look for an user
+app.post('/update_users',(req,res)=>{
+    connectionDB.query('UPDATE users SET firstname=?, lastname=?, email=?, phone=?, password=? where id=?', [req.body.firstname, req.body.lastname, req.body.email,req.body.phone, req.body.password, req.body.id],(err, rows, fields)=>{
+        if(!err){
+            console.log("User has been updated");
+            res.send("user has been updated");
+        }           
+        else
+            console.log(err);
+    })
+});
+
 
 
 //12. DELETE
